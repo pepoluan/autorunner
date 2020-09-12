@@ -1,5 +1,5 @@
 ﻿;@Ahk2Exe-SetName         AutoRunner
-;@Ahk2Exe-SetVersion      0.9.4
+;@Ahk2Exe-SetVersion      0.9.6
 ;@Ahk2Exe-SetDescription  AutoRuns script located in \autoruns of specified directories
 ;@Ahk2Exe-SetCopyright    Copyright (c) 2020 Pandu POLUAN <pepoluan@gmail.com>
 ;@Ahk2Exe-SetCompanyName  pepoluan
@@ -52,8 +52,8 @@ GuiClose(GuiHwnd)
     ExitApp
     }
 
-spinner := new SpinnerObj("Spin")
 sb_elapsed := new StatusBarTimeElapsed()
+spinner := new SpinnerObj("Spin", sb_elapsed)
 activities := new ActivityList("Activ", sb_elapsed)
 
 
@@ -65,7 +65,6 @@ For index, drv in AutorunsDrives
         {
         Sleep % WaitDelay * 1000
         spinner.Spin()
-        sb_elapsed.Update()
         }
     activities.Update(" done.`n")
     }
@@ -82,10 +81,10 @@ For index, drv in AutorunsDrives
         activities.Update("`n" . arpath . " does not exist, skipping")
         Continue
         }
-    sb_elapsed.Update()
     Loop, Files, % arpath . "\*.lnk"
         {
         lnkFiles.Push(A_LoopFileLongPath)
+        sb_elapsed.Update()
         }
     }
 activities.Update("`nFound " . lnkFiles.Length() . " link files")
@@ -137,8 +136,9 @@ class SpinnerObj
     {
     Increment := 5
 
-    __New(ProgressLabel)
+    __New(ProgressLabel, SBElapsedObject)
         {
+        this.sb := SBElapsedObject
         this.pg := ProgressLabel
         this.val := 0
         }
@@ -151,6 +151,7 @@ class SpinnerObj
             this.val -= 100
             }
         GuiControl, , % this.pg, % this.val
+        this.sb.Update()
         }
     
     Finish()
@@ -203,5 +204,6 @@ class ActivityList
         GuiControl, , % this.ebox, % this.text
         ControlFocus, % this.ebox
         Send, ^{End}
+        this.sb.Update()
         }
     }
