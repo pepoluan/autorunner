@@ -1,0 +1,14 @@
+# Multiple Blank Lines
+MD012: false
+# The concept of MarkDown is to make a text file that has markups that are "easy on the eyes"
+# so a document can be easily scanned by a renderer while at the same time perfectly readable
+# by humans.
+#
+# Multiple empty lines help readability by humans. Why are they 'not allowed'?
+#
+# Stop sacrificing human readability!!
+
+# Language specification for fenced code
+MD040: false
+# What if I want to type just a bunch of monospaced text, not of a specific language?
+# And that's what actually happened in README.md
