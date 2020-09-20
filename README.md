@@ -51,3 +51,10 @@ Changes to my script must be made public, though, because I want to see how you 
 
 Copyright (c) 2020, Pandu POLUAN <pepoluan@gmail.com>
 
+
+## Attributions
+
+* Icons made by [Icongeek26](https://www.flaticon.com/authors/icongeek26) from
+[www.flaticon.com](https://www.flaticon.com/)  
+
+  used under Flaticon License "Free for personal and commercial purpose with attribution."
