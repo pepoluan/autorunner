@@ -54,7 +54,9 @@ Options can be placed before, between, or after drive specifications. Currently 
 
 Just download the `.ahk` file and run it.
 
-You can optionally compile it to an `.exe` if you want. I'm _not_ providing the compiled script because
+You can optionally compile it to an `.exe` if you want.
+
+**Note:** I'm _not_ providing the compiled script because
 antivirus programs seems to be _very_ jumpy with UPX- or MPRESS-compressed executables.
 
 
@@ -64,8 +66,8 @@ antivirus programs seems to be _very_ jumpy with UPX- or MPRESS-compressed execu
 
   Why? Because it looks like Python ;-)
 
-* I'd appreciate it if you assign your contribution's copyright to me, so if there's a need to change the license
-  of this software, I can do that easily.
+* I'd appreciate it if you assign your contribution's copyright to me, so if there's a need to change
+  the license of this software, I can do that easily.
 
 
 ## License
@@ -73,8 +75,9 @@ antivirus programs seems to be _very_ jumpy with UPX- or MPRESS-compressed execu
 This script is released under the [MPL 2.0 License](https://www.mozilla.org/en-US/MPL/2.0/).
 
 I chose this license because it is a **file-level license**; if you want to release a proprietary product
-using my script, feel free. You DON'T have to release your proprietary product with MPL _except_ for my script;
-Changes to my script must be made public, though, because I want to see how you improve it :-)
+using my script, feel free. You DON'T have to release your proprietary product with MPL _except_ for
+my script; Changes to my script must be made public, though, because I want to see how you improve
+it :-)
 
 
 ## Copyrights
