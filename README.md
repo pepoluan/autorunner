@@ -19,6 +19,36 @@ or if you compile the script into .exe:
 AutoRunner.exe W: X:
 ```
 
+**Order matters;** the script will scan the drives in order specified.
+
+
+### Options
+
+Options can be placed before, between, or after drive specifications. Currently available options:
+
+`--dir PATH`
+
+> PATH = drive-less absolute path where autorun targets will be searched within.
+>
+> Defaults to `\autoruns`
+>
+> Examples:
+>
+> * `--dir \autoruns`
+> * `--dir \start`
+
+`--exts EXTENSIONS`
+
+> EXTENSIONS = comma-separated extensions (period-less) specifying the autorun targets in the
+> autorun directory
+>
+> Defaults to `lnk`
+>
+> Examples:
+>
+> * `--exts lnk`
+> * `--exts lnk,exe`
+
 
 ## Installation
 
