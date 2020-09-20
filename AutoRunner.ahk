@@ -115,7 +115,7 @@ GuiClose(GuiHwnd)
     ExitApp
     }
 
-sb_elapsed := new StatusBarTimeElapsed()
+sb_elapsed := new StatusBarTimeElapsed("StatBar")
 spinner := new SpinnerObj("Spin", sb_elapsed)
 activities := new ActivityList("Activ", sb_elapsed)
 
@@ -257,8 +257,9 @@ class StatusBarTimeElapsed
     {
     SleepUpdateMsec := 200
 
-    __New()
+    __New(StatusBarLabel)
         {
+        this.sb := StatusBarLabel
         this.started := A_Now
         }
     
@@ -267,7 +268,7 @@ class StatusBarTimeElapsed
         t := A_Now
         t -= this.started, seconds
         newtext := "  " . FormatSeconds(t)
-        GuiControlGet, oldtext, , StatBar,
+        GuiControlGet, oldtext, , % this.sb,
         If (newtext != oldtext)
             {
             SB_SetText(newtext)
