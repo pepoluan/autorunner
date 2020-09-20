@@ -12,3 +12,7 @@ MD012: false
 MD040: false
 # What if I want to type just a bunch of monospaced text, not of a specific language?
 # And that's what actually happened in README.md
+
+
+MD013:
+  line_length: 100
