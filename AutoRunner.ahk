@@ -1,5 +1,5 @@
 ﻿;@Ahk2Exe-SetName         AutoRunner
-;@Ahk2Exe-SetVersion      0.9.6
+;@Ahk2Exe-SetVersion      0.9.8
 ;@Ahk2Exe-SetDescription  AutoRuns script located in \autoruns of specified directories
 ;@Ahk2Exe-SetCopyright    Copyright (c) 2020 Pandu POLUAN <pepoluan@gmail.com>
 ;@Ahk2Exe-SetCompanyName  pepoluan
@@ -42,7 +42,7 @@ Gui, -Resize -MinimizeBox -MaximizeBox
 Gui, Add, GroupBox, w300 h25
 Gui, Add, Progress, xp+5 yp+10 wp-10 hp-15 vSpin, 0
 Gui, Add, Edit, xp-5 y+15 r6 wp+10 +ReadOnly vActiv
-Gui, Add, StatusBar, ,
+Gui, Add, StatusBar, vStatBar,
 
 Gui, Show, x%guiX% y%guiY%
 
@@ -175,7 +175,12 @@ class StatusBarTimeElapsed
         {
         t := A_Now
         t -= this.started, seconds
-        SB_SetText("  " . FormatSeconds(t))
+        newtext := "  " . FormatSeconds(t)
+        GuiControlGet, oldtext, , StatBar,
+        If (newtext != oldtext)
+            {
+            SB_SetText(newtext)
+            }
         }
 
     SleepSec(seconds)
