@@ -1,5 +1,5 @@
 ﻿;@Ahk2Exe-SetName         AutoRunner
-;@Ahk2Exe-SetVersion      0.10.0
+;@Ahk2Exe-SetVersion      0.10.2
 ;@Ahk2Exe-SetDescription  AutoRuns script located in \autoruns of specified directories
 ;@Ahk2Exe-SetCopyright    Copyright (c) 2020 Pandu POLUAN <pepoluan@gmail.com>
 ;@Ahk2Exe-SetCompanyName  pepoluan
